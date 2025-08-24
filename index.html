@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Reservas</title>
+</head>
+<style>
+    body {
+        background-color: gray;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <h1>SISTEMA DE RESERVAS</h1>
+
+    <h3>CADASTRO DE CLIENTES</h3>
+    <form id="reservaForm">
+        <label>Nome: </label>
+        <input type="text" id="nome" placeholder="Digite...">
+        <br><br>
+
+        <label>Número de pessoas: </label>
+        <input type="number" id="pessoas" placeholder="Digite...">
+        <br><br>
+
+        <label>Tipo de mesa:</label>
+        <select id="mesa">
+            <option value="Padrão">Padrão</option>
+            <option value="VIP">VIP</option>
+            <option value="Varanda">Varanda</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <br>
+
+    <h3>TIPO DE MESAS</h3>
+    <ul>
+        <li>Padrão Mesa comum (4 pessoas) - R$ 50 por pessoa</li>
+        <li>VIP Mesa espaçosa (6 pessoas) - R$ 80 por pessoa</li>
+        <li>Varanda Vista externa (8 pessoas) - R$ 100 por pessoa</li>
+    </ul>
+
+    <h3>Resultados</h3>
+    <div id="resultado"></div>
+
+    <script>
+        let cliente1_nome = "";
+        let cliente1_pessoas = 0;
+        let cliente1_mesa = "";
+
+        let cliente2_nome = "";
+        let cliente2_pessoas = 0;
+        let cliente2_mesa = "";
+
+        let cliente3_nome = "";
+        let cliente3_pessoas = 0;
+        let cliente3_mesa = "";
+
+        let contador = 0;
+
+        document.getElementById("reservaForm").onsubmit = function (event) {
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let pessoas = parseInt(document.getElementById("pessoas").value);
+            let mesa = document.getElementById("mesa").value;
+
+            contador = contador + 1;
+
+            if (contador === 1) {
+                cliente1_nome = nome;
+                cliente1_pessoas = pessoas;
+                cliente1_mesa = mesa;
+            } else if (contador === 2) {
+                cliente2_nome = nome;
+                cliente2_pessoas = pessoas;
+                cliente2_mesa = mesa;
+            } else if (contador === 3) {
+                cliente3_nome = nome;
+                cliente3_pessoas = pessoas;
+                cliente3_mesa = mesa;
+            }
+
+            if (contador === 3) {
+                let preco_padrao = 50;
+                let preco_vip = 80;
+                let preco_varanda = 100;
+
+                let cliente1_consumo = 0;
+                if (cliente1_mesa === "Padrão") {
+                    cliente1_consumo = preco_padrao * cliente1_pessoas;
+                } else if (cliente1_mesa === "VIP") {
+                    cliente1_consumo = preco_vip * cliente1_pessoas;
+                } else if (cliente1_mesa === "Varanda") {
+                    cliente1_consumo = preco_varanda * cliente1_pessoas;
+                }
+
+                let cliente2_consumo = 0;
+                if (cliente2_mesa === "Padrão") {
+                    cliente2_consumo = preco_padrao * cliente2_pessoas;
+                } else if (cliente2_mesa === "VIP") {
+                    cliente2_consumo = preco_vip * cliente2_pessoas;
+                } else if (cliente2_mesa === "Varanda") {
+                    cliente2_consumo = preco_varanda * cliente2_pessoas;
+                }
+
+                let cliente3_consumo = 0;
+                if (cliente3_mesa === "Padrão") {
+                    cliente3_consumo = preco_padrao * cliente3_pessoas;
+                } else if (cliente3_mesa === "VIP") {
+                    cliente3_consumo = preco_vip * cliente3_pessoas;
+                } else if (cliente3_mesa === "Varanda") {
+                    cliente3_consumo = preco_varanda * cliente3_pessoas;
+                }
+
+                let total_restaurante = cliente1_consumo + cliente2_consumo + cliente3_consumo;
+
+                document.getElementById("resultado").innerHTML =
+                    "Cliente: " + cliente1_nome + " | Total: R$ " + cliente1_consumo + "<br>" +
+                    "Cliente: " + cliente2_nome + " | Total: R$ " + cliente2_consumo + "<br>" +
+                    "Cliente: " + cliente3_nome + " | Total: R$ " + cliente3_consumo + "<br><br>" +
+                    "<strong>Consumo mínimo total do restaurante: R$ " + total_restaurante + "</strong>";
+
+                document.getElementById("reservaForm").style.display = "none";
+            }
+
+            document.getElementById("nome").value = "";
+            document.getElementById("pessoas").value = "";
+            document.getElementById("mesa").value = "Padrão";
+        };
+    </script>
+
+</body>
+
+</html>
