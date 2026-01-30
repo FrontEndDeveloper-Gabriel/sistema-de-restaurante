@@ -1,11 +1,43 @@
-# CÓDIGO EM JAVASCRIPT- SISTEMA DE RESTAURANTE
+# 📜 RESTAURANT SYSTEM
 
-<h3>Introdução</h3>
-Desenvolvido em JavaScript, este sistema eficaz permite selecionar mesas por categoria e preço e, no final do programa, calcular o total dos clientes.
+<br>
 
-# <h3>Detalhes <br>
- ● Utilizando o Live Server, é carregado uma página web com um formulário de preenchimento.
+## 📖 About
+```ascii
+> Developed in JavaScript, this effective system allows you to select tables by category and price and,
+  at the end of the program, calculate the total number of customers.
+```
 
-# <h3>Requisitos:
- ● Ter um editor de texto na máquina; <br>
- ● Ter o <a href="https://code.visualstudio.com/download">Visual Studio Code</a> instalado na máquina.</h3>
+<br>
+
+## 📖 Details
+```ascii
+ ● Using Live Server in VSCODE, a web page with a form to fill out is loaded.
+```
+
+<br>
+
+## 📌 Requeriments
+ ● Accessible in browsers such as **Chrome, Edge, Firefox,** among others; <br>
+ ● Have a text editor on your computer; <br>
+ ● Have **<a href="https://code.visualstudio.com/download">Visual Studio Code</a>** installed on your computer.
+ 
+<br>
+
+## 🛠️ Tech Stack
+
+[![Stack](https://skillicons.dev/icons?i=html,css,js)](https://skillicons.dev)
+
+<br>
+
+---
+<div align = "center">
+<img src = "/give_a_star.png" width = "594" height = "168">
+</div>
+
+<br>
+
+<div align = "center">
+ Created by <a href = "https://github.com/FrontEndDeveloper-Gabriel/"> Gabriel Ribeiro</a> 👨‍💻
+</div>
+
